@@ -91,6 +91,6 @@ function regenerate() {
 
 }
 
-document.getElementById("regenerate").addEventListener("touchstart", ()=> {
+document.getElementById("regenerate").addEventListener("click", function() {
     regenerate()
 })
