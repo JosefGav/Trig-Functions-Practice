@@ -90,3 +90,7 @@ function regenerate() {
     document.getElementById("backTan").innerHTML =  theta.tan()
 
 }
+
+document.getElementById("regenerate").addEventListener("touchstart", ()=> {
+    regenerate()
+})
