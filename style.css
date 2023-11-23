@@ -1,9 +1,25 @@
+.info {
+  width: 70%;
+  margin:auto;
+}
+#mainContainer {
+  width:40%;
+  height: 100%;
+  margin:auto;
+  border-color: black;
+  border-style:solid;
+  border-radius:25px;
+
+}
+
 .flip-card {
+    margin:auto;
     background-color: transparent;
     width: 300px;
     height: 200px;
     border: 1px solid #f1f1f1;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    font-size: x-large;
   }
   
   /* This container is needed to position the front and back side */
@@ -28,6 +44,7 @@
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
+    border-radius: 10px;
   }
   
   /* Style the front side (fallback if image is missing) */
@@ -42,3 +59,9 @@
     color: white;
     transform: rotateY(180deg);
   }
+
+  #regenerate {
+    font-size: x-large;
+    margin: auto;
+  }
+
