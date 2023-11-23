@@ -69,28 +69,24 @@ class Angle {
         return string;
     }
 }
-let angleBase = Math.floor(Math.random() * 2); // 0-1, rep 30-45
-let trigFunc = Math.floor(Math.random() * 3) + 1; // 1-3 represents sin cos tan
-let multiplier = Math.floor(Math.random() * 12) + 1;  // 1-12
+function regenerate() {
+    let angleBase = Math.floor(Math.random() * 2); // 0-1, rep 30-45
+    let multiplier = Math.floor(Math.random() * 12) + 1;  // 1-12
 
-let base = 0;
+    let base = 0;
 
-if (angleBase == 0) base = 30;
-if (angleBase == 1) base = 45;
+    if (angleBase == 0) base = 30;
+    if (angleBase == 1) base = 45;
+    let theta = new Angle(base*multiplier);
+    // document.getElementById("top").innerHTML = angleBase*multiplier
+    // document.getElementById("type").innerHTML = angleBase
+    document.getElementById("frontSin").innerHTML = "sin"+theta.angle.toString()
+    document.getElementById("backSin").innerHTML =  theta.sin()
 
-console.log(angleBase)
-console.log(multiplier)
-console.log(base)
+    document.getElementById("frontCos").innerHTML = "cos"+theta.angle.toString()
+    document.getElementById("backCos").innerHTML =  theta.cos()
 
+    document.getElementById("frontTan").innerHTML = "tan"+theta.angle.toString()
+    document.getElementById("backTan").innerHTML =  theta.tan()
 
-let theta = new Angle(base*multiplier);
-// document.getElementById("top").innerHTML = angleBase*multiplier
-// document.getElementById("type").innerHTML = angleBase
-document.getElementById("frontSin").innerHTML = "sin"+theta.angle.toString()
-document.getElementById("backSin").innerHTML =  theta.sin()
-
-document.getElementById("frontCos").innerHTML = "cos"+theta.angle.toString()
-document.getElementById("backCos").innerHTML =  theta.cos()
-
-document.getElementById("frontTan").innerHTML = "tan"+theta.angle.toString()
-document.getElementById("backTan").innerHTML =  theta.tan()
+}
