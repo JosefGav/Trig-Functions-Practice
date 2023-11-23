@@ -93,4 +93,5 @@ function regenerate() {
 
 document.getElementById("regenerate").addEventListener("click", function() {
     regenerate()
+    MathJax.typeset()
 })
