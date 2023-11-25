@@ -7,10 +7,10 @@ class Angle {
         this.PA = angle % 360
         this.angle = angle
 
-        if ( this.PA == 0 ){ this.opp = "0"; this.adj = "1"; this.hyp = "1" }
-        else if ( this.PA == 90 ) { this.opp = "1"; this.adj = "0"; this.hyp = "1"; this.quadrant = undefined}
-        else if ( this.PA == 180 ) { this.opp = "0"; this.adj = "-1"; this.hyp = "1"; this.quadrant = undefined }
-        else if ( this.PA == 270 ) { this.opp = "-1"; this.adj = "0"; this.hyp = "1"; this.quadrant = undefined }
+        if ( this.PA == 0 ){ this.opp = "0"; this.adj = "1"; this.hyp = "1" ; this.radTEX = "$$2\\pi$$"}
+        else if ( this.PA == 90 ) { this.opp = "1"; this.adj = "0"; this.hyp = "1"; this.quadrant = undefined ;  this.radTEX = "$$\\frac{\\pi}{2}$$"}
+        else if ( this.PA == 180 ) { this.opp = "0"; this.adj = "-1"; this.hyp = "1"; this.quadrant = undefined ;  this.radTEX = "$$\\frac{\\pi}{2}$$"}
+        else if ( this.PA == 270 ) { this.opp = "-1"; this.adj = "0"; this.hyp = "1"; this.quadrant = undefined ;  this.radTEX = "$$\\frac{3\\pi}{2}$$"}
 
         else if      (0 < this.PA && this.PA  < 90)   { this.quadrant = 1; this.RA = this.PA; }
         else if (90 < this.PA && this.PA < 180)  { this.quadrant = 2; this.RA = 180 - this.PA; }
@@ -37,7 +37,10 @@ class Angle {
             this.hyp = "\\sqrt{2}" 
             this.rad = [this.PA/this.RA,4];
         }
-        this.radTEX = "$$\\frac{"+this.rad[0].toString()+"\\pi}{"+ this.rad[1].toString()+"}$$"
+        
+        if (!this.radTEX) {
+            this.radTEX = "$$\\frac{"+this.rad[0].toString()+"}{"+this.rad[1].toString()+"}\\pi$$"
+        }
     }
 
     sin() {
@@ -87,7 +90,7 @@ class Angle {
         return string;
     }
 }
-function regenerate(rad) {
+function regenerate() {
     let angleBase = Math.floor(Math.random() * 2); // 0-1, rep 30-45
     let multiplier = Math.floor(Math.random() * 12) + 1;  // 1-12
 
@@ -106,7 +109,7 @@ function regenerate(rad) {
     document.getElementById("frontTan").innerHTML = "tan" + theta.radTEX//"tan"+theta.angle.toString() + "°"
     document.getElementById("backTan").innerHTML =  theta.tan() 
 
-    if (rad) {
+    if (radian) {
         document.getElementById("frontSin").innerHTML = "sin" + theta.radTEX
         document.getElementById("frontCos").innerHTML = "cos" + theta.radTEX
         document.getElementById("frontTan").innerHTML = "tan" + theta.radTEX
@@ -119,7 +122,7 @@ function regenerate(rad) {
 }
 
 document.getElementById("regenerate").addEventListener("click", function() {
-    regenerate(radian)
+    regenerate()
     MathJax.typesetPromise()
 })
 
