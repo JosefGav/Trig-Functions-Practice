@@ -9,8 +9,8 @@ class Angle {
 
         if ( this.PA == 0 ){ this.opp = "0"; this.adj = "1"; this.hyp = "1" ; this.radTEX = "$$2\\pi$$"}
         else if ( this.PA == 90 ) { this.opp = "1"; this.adj = "0"; this.hyp = "1"; this.quadrant = undefined ;  this.radTEX = "$$\\frac{\\pi}{2}$$"}
-        else if ( this.PA == 180 ) { this.opp = "0"; this.adj = "-1"; this.hyp = "1"; this.quadrant = undefined ;  this.radTEX = "$$\\frac{\\pi}{2}$$"}
-        else if ( this.PA == 270 ) { this.opp = "-1"; this.adj = "0"; this.hyp = "1"; this.quadrant = undefined ;  this.radTEX = "$$\\frac{3\\pi}{2}$$"}
+        else if ( this.PA == 180 ) { this.opp = "0"; this.adj = "-1"; this.hyp = "1"; this.quadrant = undefined ;  this.radTEX = "$$\\pi$$"}
+        else if ( this.PA == 270 ) { this.opp = "-1"; this.adj = "0"; this.hyp = "1"; this.quadrant = undefined ;  this.radTEX = "$$\\frac{3}{2}\\pi$$"}
 
         else if      (0 < this.PA && this.PA  < 90)   { this.quadrant = 1; this.RA = this.PA; }
         else if (90 < this.PA && this.PA < 180)  { this.quadrant = 2; this.RA = 180 - this.PA; }
