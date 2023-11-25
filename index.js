@@ -39,7 +39,11 @@ class Angle {
         }
         
         if (!this.radTEX) {
-            this.radTEX = "$$\\frac{"+this.rad[0].toString()+"}{"+this.rad[1].toString()+"}\\pi$$"
+            if (this.rad[0]==1) {
+                this.radTEX = "$$\\frac{\\pi}{"+this.rad[1].toString()+"}$$"
+            } else {
+                this.radTEX = "$$\\frac{"+this.rad[0].toString()+"}{"+this.rad[1].toString()+"}\\pi$$"
+            }
         }
     }
 
